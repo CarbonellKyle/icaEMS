@@ -17,11 +17,16 @@
                 </div>
 
                 <div class="w-full p-6">
-                    <p class="text-gray-700">
-                        You are logged in as a user!
-                    </p>
+                    <p class="text-gray-700 text-right">
+                        Welcome, {{ Auth::user()->name }}
+                    </p><br><br>
+                    <h1 class="h1">User Information:</h1><br>
+                    <p><strong>Username:</strong> {{ Auth::user()->name }}</p>
+                    <p><strong>Email: </strong>{{ Auth::user()->email }}</p>
+                    <p><strong>Account Role: </strong>User</p>
                 </div>
             </div>
+
         </div>
     </div>
 @endsection
