@@ -14,8 +14,8 @@ How to use:
 
 
 ## Group Members:
-Carbonell, Kyle - https://github.com/CarbonellKyle
-Casagan, Medjuil - https://github.com/Medjuil
-Ermio, Johnny - https://github.com/Nyjaaaaa
-Peligrino, Adrial Pol -https://github.com/AdrianPol27
+Carbonell, Kyle - https://github.com/CarbonellKyle <br/>
+Casagan, Medjuil - https://github.com/Medjuil <br/>
+Ermio, Johnny - https://github.com/Nyjaaaaa <br/>
+Peligrino, Adrial Pol -https://github.com/AdrianPol27 <br/>
 Sanchez, Charlee Ahl
