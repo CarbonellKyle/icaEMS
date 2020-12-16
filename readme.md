@@ -12,6 +12,10 @@ How to use:
 7. Run `php artisan db:seed`
 8. Run `php artisan serve` and go to localhost
 
+To login as Administrator:<br/>
+e-mail address: superadministrator<br/>
+password: password
+
 
 ## Group Members:
 Carbonell, Kyle - https://github.com/CarbonellKyle <br/>
