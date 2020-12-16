@@ -1,68 +1,81 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-</head>
-<body class="bg-gray-100 h-screen antialiased leading-none">
-<div class="flex flex-col">
-    @if(Route::has('login'))
-        <div class="absolute top-0 right-0 mt-4 mr-4">
-            @auth
-                <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
-            @else
-                <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase pr-6">{{ __('Login') }}</a>
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
-                @endif
-            @endauth
+@section('content')
+<div class="container-fluid bg-wave">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <img src="/img/itss-logo.png" class="w-100">
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-6">
+                <h1>ICA Equipment Management System</h1>
+                <p class="lead mt-4">ICA Equipment Management System is developed for the purpose of Web Software Tools project. However, the system is fully functional and open for future updates.</p>
+                <button class="btn btn-primary btn-lg">Download Now</button>
+            </div>
         </div>
-    @endif
+    </div>
 
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="flex flex-col justify-around h-full">
-            <div>
-                <h1 class="text-gray-600 text-center font-light tracking-wider text-5xl mb-6">
-                    {{ config('app.name', 'Laravel') }}
-                </h1>
-                <ul class="list-reset">
-                    <li class="inline pr-8">
-                        <a href="https://laravel.com/docs" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Documentation">Documentation</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://laracasts.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Laracasts">Laracasts</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="News">News</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Nova">Nova</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Forge">Forge</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://vapor.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Vapor">Vapor</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="GitHub">GitHub</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://tailwindcss.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Tailwind Css">Tailwind CSS</a>
-                    </li>
-                </ul>
+    <!-- How to use -->
+    <div class="container">
+        <div class="row p-3">
+
+            <!-- Column -->
+            <div class=" col-sm-12 col-md-12 col-lg-12">
+                <h1 class="text-ff p-3 text-center">How to use</h1>
+            </div>
+
+            <!-- Column -->
+            <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
+                <div class="text-center text-justify p-4 bordered">
+                    <i class="text-ff pb-4 fa fa-user-plus"></i>
+                    <p class="text-ff h2">Create Account</p>
+                    <p class="lead text-ff">Sign in to use the services of ICA Equipment Management System.</p>
+                </div>    
+            </div>
+
+            <!-- Column -->
+            <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
+                <div class="text-center text-justify p-4 bordered">
+                    <i class="text-ff pb-4 fa fa-arrow-circle-up"></i>
+                    <p class="text-ff h2">Choose Item</p>
+                    <p class="lead text-ff">Choose the item you wish to borrow, fill up credentials for documentation.</p>
+                </div>    
+            </div>
+
+            <!-- Column -->
+            <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
+                <div class="text-center text-justify p-4 bordered">
+                    <i class="text-ff pb-4 fa fa-sign-language"></i>
+                    <p class="text-ff h2">Borrow Item</p>
+                    <p class="lead text-ff">Your application for borrowing equipments will be process.</p>
+                </div>    
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="text-center">
+                <h3 class="mt-4">Developed By:</h3>
+                <p class="lead">Carbonell, Kyle</p>
+                <p class="lead mt-n3">Casagan, Medjuil</p>
+                <p class="lead mt-n3">Ermio, Johnny</p>
+                <p class="lead mt-n3">Peligrino, Adrial Pol</p>
+                <p class="lead mt-n3">Sanchez, Charlee Ahl</p>
             </div>
         </div>
     </div>
 </div>
-</body>
-</html>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">Copyright &copy; 2020 ICA Equipment Management System</p>
+    </div>
+</footer>
+
+
+
+@endsection
