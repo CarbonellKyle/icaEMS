@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('admin', 'App\Http\Controllers\AdminController');
 
 Auth::routes();
 
@@ -24,9 +26,4 @@ Route::get('/user', 'UserController@index')->name('user');
 Route::get('/admin', 'AdminController@index')->name('admin');
 Auth::routes();
 
-
-
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
