@@ -19,4 +19,5 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/user', 'UserController@index')->name('user');
 Route::resource('admin', 'AdminController');
