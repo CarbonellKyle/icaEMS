@@ -1,4 +1,4 @@
-@extends('admin.layout')
+@extends('layouts.app')
 
 @section('content')
     <div class="row">
@@ -6,35 +6,32 @@
             <div class="pull-left">
                 <h2> View Summary</h2>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('admin.index') }}"> Back</a>
-            </div>
         </div>
     </div>
    
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                {{ $admin->Borrower Name }}
+                <strong>Borrower Name:</strong>
+                {{ $admin->borrower_name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Course:</strong>
-                {{ $admin->Equipment Name }}
+                <strong>Equipment Name:</strong>
+                {{ $admin->equipment_name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Datetime Borrowed:</strong>
-                {{ $admin->Datetime Borrowed }}
+                {{ $admin->datetime_borrowed }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Datetime Retured:</strong>
-                {{ $admin->Datetime Returned }}
+                {{ $admin->datetime_returned }}
             </div>
         </div>
     </div>

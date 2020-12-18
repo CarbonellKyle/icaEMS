@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Monitor Equipments') }}</div>
+                <div class="card-header">{{ __('ICA Equipment Monitoring System') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -24,7 +24,7 @@
 
                     <table class="table table-bordered">
                         <tr>
-                            <th>ID</th>
+                            <th>Log ID</th>
                             <th>Borrower Name</th>
                             <th>Equipment Name</th>
                             <th>Datetime Borrowed</th>
@@ -34,14 +34,14 @@
                         @foreach ($admin as $admin)
                         <tr>
                             <td>{{ ++$i }}</td>
-                            <td>{{ $admin->borrower_id }}</td>
+                            <td>{{ $admin->borrower_name }}</td>
                             <td>{{ $admin->equipment_name }}</td>
                             <td>{{ $admin->datetime_borrowed }}</td>
                             <td>{{ $admin->datetime_returned }}</td>
                             <td>
-                                <form action="{{route('admin.destroy', $admin->logs_id)}}" method="POST">
-                                    <a class="btn btn-info" href="{{route('admin.show', $admin->id)}}">See details</a>
-                                    <a class="btn btn-primary" href="{{route('admin.edit', $admin->id)}}">Update</a>
+                                <form action="{{route('admin.destroy', $admin->logs_id)}}" method="DELETE">
+                                    <a class="btn btn-info" href="{{route('admin.show', $admin->logs_id)}}" >Summary</a>
+                                    <a class="btn btn-primary" href="{{route('admin.edit', $admin->logs_id)}}">Update</a>
 
                                     @csrf
                                     @method('DELETE')

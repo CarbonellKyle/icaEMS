@@ -14,14 +14,16 @@ class AdminController extends Controller
 
     public function index()
     {
-        $admin = Log::latest()->paginate(5);
+        $admin = Log::all();
         return view('admin.index',compact('admin'))
             ->with('i',(request()->input('page',1)-1)*5);
     }
 
     public function create()
     {
-        return view('admin.create');
+    $admin = Log::all();
+
+    return view('/admin.create', compact('admin'));
     }
 
     public function store(Request $request)
@@ -30,7 +32,7 @@ class AdminController extends Controller
             'borrower_name'=>'required',
             'equipment_name'=>'required',
             'datetime_borrowed'=>'required',
-            'datetime_returned'=>'required',
+            'datetime_returned'=>'nullable',
         ]);
 
         Log::create($request->all());

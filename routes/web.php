@@ -17,13 +17,6 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('admin', 'App\Http\Controllers\AdminController');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/user', 'UserController@index')->name('user');
-Route::get('/admin', 'AdminController@index')->name('admin');
-Auth::routes();
-
-Auth::routes();
+Route::resource('admin', 'AdminController');

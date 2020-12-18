@@ -1,14 +1,6 @@
-@extends('admin.layout')
+@extends('layouts.app')
 
 @section('content')
-<div class="row">
-	<div class="col-lg-12 margin-tb">
-		<div class="pull-right">
-			<a class="btn btn-primary" href="{{ route('admin.index')}}">Back</a>
-		</div>
-	</div>
-</div>
-
 @if ($errors->any())
 	<div class="alert alert-danger">
 		<strong>Whooops!</strong> There were some problems with your input.<br><br>
@@ -30,28 +22,28 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
 					<strong>Borrower Name:</strong>
-					<input type="text" name="studname" class="form-control" placeholder="Borrower Name">
+					<input type="text" name="studname" class="form-control" placeholder="">
 				</div>
 			</div>
 
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
 					<strong>Equipment Name:</strong>
-					<input type="text" name="course" class="form-control" placeholder="Equipment Name">
+					<input type="text" name="course" class="form-control" placeholder="">
 				</div>
 			</div>
 
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
 					<strong>Datetime Barrowed:</strong>
-					<input type="text" name="datetime_borrowed" class="form-control" placeholder="Datetime Barrowed">
+					<input type="text" name="datetime_borrowed" class="form-control" placeholder="">
 				</div>
 			</div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
 					<strong>Datetime Returned:</strong>
-					<input type="text" name="datetime_returned" class="form-control" placeholder="Datetime Returned">
+					<input type="text" name="datetime_returned" class="form-control" placeholder="">
 				</div>
 			</div>
 

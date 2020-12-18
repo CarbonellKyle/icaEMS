@@ -1,14 +1,6 @@
-@extends('admin.layout')
+@extends('layouts.app')
 
 @section('content')
-<div class="row">
-	<div class="col-lg-12 margin-tb">
-		<div class="pull-left">
-			<a class="btn btn-primary" href="{{ route('admin.index')}}">Back</a>
-		</div>
-	</div>
-</div>
-
 @if ($errors->any())
 	<div class="alert alert-danger">
 		Whooops! There were some problems with your input.<br><br>
@@ -21,40 +13,41 @@
 	</div>
 	@endif
 
-	<form action="{{route('admin.store')}}" method="POST">
+	<form action="{{route('admin.index')}}" method="POST">
 		@csrf
-
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="form-group">
-					Borrower Name:
-					<input type="text" name="studname" class="form-control">
+		<div class="card">
+			<div class="row p-5">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Borrower Name:</strong>
+						<input type="text" name="borrower_name" class="form-control">
+					</div>
 				</div>
-			</div>
 
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="form-group">
-					Equipment Name:
-					<input type="text" name="course" class="form-control">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Equipment Name:</strong>
+						<input type="text" name="equipment_name" class="form-control">
+					</div>
 				</div>
-			</div>
 
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="form-group">
-					Datetime Barrowed:
-					<input type="text" name="fee" class="form-control">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Datetime Barrowed(YYYY-MM-DD):</strong>
+						<input type="text" name="datetime_borrowed" class="form-control">
+					</div>
 				</div>
-			</div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="form-group">
-					Datetime Returned:
-					<input type="text" name="fee" class="form-control">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Datetime Returned(YYYY-MM-DD):</strong>
+						<input type="text" name="datetime_returned" class="form-control">
+					</div>
 				</div>
-			</div>
 
-			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<button type="submit" class="btn btn-primary">Monitor</button>
+				<div class="col-xs-12 col-sm-12 col-md-12 text-center">
+					<button type="submit" class="btn btn-primary">Monitor</button>
+				</div>
 			</div>
 		</div>
 	</form>

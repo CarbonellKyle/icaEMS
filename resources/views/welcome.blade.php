@@ -75,7 +75,4 @@
         <p class="text-muted">Copyright &copy; 2020 ICA Equipment Management System</p>
     </div>
 </footer>
-
-
-
 @endsection

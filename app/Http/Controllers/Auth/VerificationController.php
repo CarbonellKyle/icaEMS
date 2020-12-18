@@ -26,7 +26,16 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected function authenticated(Request $request, $user)
+    {
+        if($user->hasRole('superadministrator')){
+            return redirect('/admin');
+        }
+
+        if($user->hasRole('user')){
+            return redirect('/user');
+        }
+    }
 
     /**
      * Create a new controller instance.
