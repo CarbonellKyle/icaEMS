@@ -14,9 +14,9 @@ class CreateEquipmentsTable extends Migration
     public function up()
     {
         Schema::create('equipments', function (Blueprint $table) {
-            $table->bigIncrements('equipment_id');
+            $table->unsignedBigInteger('equipment_id')->unique();
             $table->string('equipment_name');
-            $table->timestamps();
+            $table->date('date_added');
         });
     }
 

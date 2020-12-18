@@ -16,10 +16,10 @@ class CreateLogsTable extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('borrower_name');
-            $table->string('equipment_name');
+            $table->unsignedBigInteger('equipment_id');
             $table->date('datetime_borrowed');
             $table->date('datetime_returned');
-            $table->timestamps();
+            $table->foreign('equipment_id')->references('equipment_id')->on('equipments')->onDelete('cascade');
         });
     }
 

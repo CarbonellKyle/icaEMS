@@ -19,6 +19,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- style for admin and all views that extended to app.blade.php  -->
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
@@ -30,10 +32,21 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     ICA EMS
                 </a>
+                <div class="d-flex inline text-light">
+                        <ul class="nav">
+                            <li class="nav-item"><a href="{{ route('user') }}" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">User</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Equipment</a></li>
+                            <li class="nav-item"><a href="{{ route('summary.index') }}" class="nav-link">Summary</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        </ul>
+                    </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                <ul>
+                </ul>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
