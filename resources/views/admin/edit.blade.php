@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">
+	<div class="col-lg-12 margin-tb">
+		<div class="pull-right">
+			<a class="btn btn-primary" href="{{ route('admin.index')}}">Back</a>
+		</div>
+	</div>
+</div>
+
 @if ($errors->any())
 	<div class="alert alert-danger">
 		<strong>Whooops!</strong> There were some problems with your input.<br><br>
@@ -13,7 +21,7 @@
 	</div>
 	@endif
 
-	<form action="{{route('admin.update',$admin->logs_id)}}" method="POST">
+	<form action="{{route('admin.update',$admin->id)}}" method="POST">
 		@csrf
 
 		@method('PUT')

@@ -39,9 +39,9 @@
                             <td>{{ $admin->datetime_borrowed }}</td>
                             <td>{{ $admin->datetime_returned }}</td>
                             <td>
-                                <form action="{{route('admin.destroy', $admin->logs_id)}}" method="DELETE">
-                                    <a class="btn btn-info" href="{{route('admin.show', $admin->logs_id)}}" >Summary</a>
-                                    <a class="btn btn-primary" href="{{route('admin.edit', $admin->logs_id)}}">Update</a>
+                                <form action="{{route('admin.destroy', $admin->id)}}" method="POST">
+                                    <a class="btn btn-info" href="{{route('admin.show', $admin->id)}}" >Summary</a>
+                                    <a class="btn btn-primary" href="{{route('admin.edit', $admin->id)}}">Update</a>
 
                                     @csrf
                                     @method('DELETE')

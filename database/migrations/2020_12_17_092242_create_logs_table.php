@@ -14,7 +14,7 @@ class CreateLogsTable extends Migration
     public function up()
     {
         Schema::create('logs', function (Blueprint $table) {
-            $table->bigIncrements('logs_id');
+            $table->bigIncrements('id');
             $table->string('borrower_name');
             $table->string('equipment_name');
             $table->date('datetime_borrowed');

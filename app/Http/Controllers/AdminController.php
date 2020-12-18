@@ -38,7 +38,7 @@ class AdminController extends Controller
         Log::create($request->all());
 
         return redirect()->route('admin.index')
-            ->with('success',' Recorded.');
+            ->with('success',' Recorded');
     }
 
     public function show(Log $admin)
