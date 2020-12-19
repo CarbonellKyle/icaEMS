@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.entrance')
 
-@section('content')
+@section('entrance')
 <div class="container-fluid bg-wave">
     <div class="container">
         <div class="row">
@@ -10,8 +10,24 @@
             <div class="col-sm-12 col-md-12 col-lg-6">
                 <h1>ICA Equipment Management System</h1>
                 <p class="lead mt-4">ICA Equipment Management System is developed for the purpose of Web Software Tools project. However, the system is fully functional and open for future updates.</p>
-                <button class="btn btn-primary btn-lg">Download Now</button>
-            </div>
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <a href="{{route('login')}}" class="btn btn-success btn-lg btn-block mr-2">login</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{{route('register')}}" class="btn btn-primary btn-lg btn-block mr-2">register</a>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-8">
+                        <div class="d-flex justify-content-center">
+                        <strong  class="m-2 text-center">or</strong>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                        <button class="btn btn-warning btn-lg">Download Now</button>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 
