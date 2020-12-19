@@ -10,11 +10,11 @@ All Equipments
                     <table class="table table-hover text-center">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Equipment_id</th>
-                                <th>Equipment_name</th>
-                                <th>times_of_barrowed</th>
-                                <th>action</th>
+                                <th>No</th>
+                                <th>Equipment ID</th>
+                                <th>Equipment Name</th>
+                                <th>Times Barrowed</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody><?php $x= 1;

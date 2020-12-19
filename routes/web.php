@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserBorrowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,9 @@ Route::group(['middleware'=>['role:superadministrator']], function(){
     Route::get('/summary/data/details/{id}/{month}/{year}', 'SummaryController@getDataDetails')->name('summary.data');
     Route::post('/summary/reports', 'SummaryController@getReports')->name('summary.reports');
 });
+
+// route for borrow
+Route::get('/User/borrow', [UserBorrowController::class, 'indexBorrow'])->name('borrow');
+Route::get('/User/borrow/history', [UserBorrowController::class, 'borrowHistory'])->name('borrow.history');
+Route::get('/User/borrow/history/details/{id}', [UserBorrowController::class, 'borrowHistoryDetails'])->name('borrow.history.details');
+Route::post('/User/borrow/submit', [UserBorrowController::class, 'borrowSubmit'])->name('borrow.submit');

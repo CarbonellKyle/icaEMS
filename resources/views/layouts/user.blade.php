@@ -19,26 +19,27 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- style for admin and all views that extended to app.blade.php  -->
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <!-- style for user and all views that extended to user.blade.php  -->
+    <link href="{{ asset('css/user.css') }}" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="/css/styles.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white m-3 shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/user') }}">
                     <img src="/img/ica_logo.png" style="height: 30px; width: auto;"> ICA EMS
                 </a>
                 <div class="d-flex inline text-light">
                         <ul class="nav">
-                            <li class="nav-item"><a href="{{ route('user') }}" class="nav-link">Home</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Borrow</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Borrow History</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                            <li class="nav-item"><a href="{{ route('user') }}" class="nav-link"><strong>Home</strong></a></li>
+                            <li class="nav-item"><a href="#" class="nav-link"><strong>Profile</strong></a></li>
+                            <li class="nav-item"><a href="{{ route('borrow') }}" class="nav-link"><strong>Borrow</strong></a></li>
+                            <li class="nav-item"><a href="{{ route('borrow.history') }}" class="nav-link"><strong>Borrow History</strong></a></li>
+                            <li class="nav-item"><a href="#" class="nav-link"><strong>About</strong></a></li>
                         </ul>
                     </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

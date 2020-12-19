@@ -1,0 +1,7 @@
+.table-overflow{
+    height: 50vh;
+    overflow: auto;
+}
+a{
+    text-decoration: none !important;
+}

@@ -34,7 +34,7 @@
                 </a>
                 <div class="d-flex inline text-light">
                         <ul class="nav">
-                            <li class="nav-item"><a href="{{ route('user') }}" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="{{ url('/admin') }}" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">User</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Equipment</a></li>

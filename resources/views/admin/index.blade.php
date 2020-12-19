@@ -17,41 +17,42 @@
                     <div class="row">
                         <div class="col-lg-12 margin-tb">
                             <div class="pull-right">
-                                <a class="btn btn-success" href="{{ route('admin.create')}}">Monitor Equipment</a>
+                                <!-- <a class="btn btn-success" href="{{ route('admin.create')}}">Monitor Equipment</a> -->
                             </div>
                         </div>
                     </div>
+                    <div class="table-overflow d-flex justify-content-center">
+                        <table class="table table-bordered ">
+                            <tr>
+                                <th>Log ID</th>
+                                <th>Borrower Name</th>
+                                <th>Equipment Name</th>
+                                <th>Datetime Borrowed</th>
+                                <th>Datetime Returned</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            @foreach ($admin as $admin)
+                            <tr>
+                                <td>{{ ++$i }}</td>
+                                <td>{{ $admin->borrower_name }}</td>
+                                <td>{{ $admin->equipment_name }}</td>
+                                <td>{{ $admin->datetime_borrowed }}</td>
+                                <td>{{ $admin->datetime_returned }}</td>
+                                <td>
+                                    <form action="{{route('admin.destroy', $admin->id)}}" method="POST">
+                                        <!-- <a class="btn btn-info" href="{{route('admin.show', $admin->id)}}" >Summary</a> -->
+                                        <a class="btn btn-primary" href="{{route('admin.edit', $admin->id)}}">Update</a>
 
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>Log ID</th>
-                            <th>Borrower Name</th>
-                            <th>Equipment Name</th>
-                            <th>Datetime Borrowed</th>
-                            <th>Datetime Returned</th>
-                            <th width="280px">Action</th>
-                        </tr>
-                        @foreach ($admin as $admin)
-                        <tr>
-                            <td>{{ ++$i }}</td>
-                            <td>{{ $admin->borrower_name }}</td>
-                            <td>{{ $admin->equipment_name }}</td>
-                            <td>{{ $admin->datetime_borrowed }}</td>
-                            <td>{{ $admin->datetime_returned }}</td>
-                            <td>
-                                <form action="{{route('admin.destroy', $admin->id)}}" method="POST">
-                                    <a class="btn btn-info" href="{{route('admin.show', $admin->id)}}" >Summary</a>
-                                    <a class="btn btn-primary" href="{{route('admin.edit', $admin->id)}}">Update</a>
+                                        @csrf
+                                        @method('DELETE')
 
-                                    @csrf
-                                    @method('DELETE')
-
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </table>
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
