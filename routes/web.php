@@ -23,10 +23,11 @@ Route::get('/user', 'UserController@index')->name('user');
 Route::resource('admin', 'AdminController');
 
 
-//route for summary
-Route::get('/Home', 'SummaryController@container')->name('summary.container');
-Route::get('/summary', 'SummaryController@index')->name('summary.index');
-Route::get('/Error', 'SummaryController@getError')->name('summary.error');
-Route::get('/summary/index/details/{id}', 'SummaryController@getDetails')->name('summary.index.details');
-Route::get('/summary/data/details/{id}/{month}/{year}', 'SummaryController@getDataDetails')->name('summary.data');
-Route::post('/summary/reports', 'SummaryController@getReports')->name('summary.reports');
+Route::group(['middleware'=>['role:superadministrator']], function(){
+    Route::get('/Home', 'SummaryController@container')->name('summary.container');
+    Route::get('/summary', 'SummaryController@index')->name('summary.index');
+    Route::get('/Error', 'SummaryController@getError')->name('summary.error');
+    Route::get('/summary/index/details/{id}', 'SummaryController@getDetails')->name('summary.index.details');
+    Route::get('/summary/data/details/{id}/{month}/{year}', 'SummaryController@getDataDetails')->name('summary.data');
+    Route::post('/summary/reports', 'SummaryController@getReports')->name('summary.reports');
+});
