@@ -37,7 +37,7 @@
                             <li class="nav-item"><a href="{{ url('/admin') }}" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">User</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Equipment</a></li>
+                            <li class="nav-item"><a href="{{ url('/equipment') }}" class="nav-link">Equipment</a></li>
                             <li class="nav-item"><a href="{{ route('summary.index') }}" class="nav-link">Summary</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                         </ul>

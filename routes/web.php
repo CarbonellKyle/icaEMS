@@ -22,6 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/user', 'UserController@index')->name('user');
 Route::resource('admin', 'AdminController');
+Route::resource('equipment', 'EquipmentController');
 
 
 Route::group(['middleware'=>['role:superadministrator']], function(){
