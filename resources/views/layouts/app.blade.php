@@ -29,8 +29,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    ICA EMS
+                <a class="navbar-brand" href="{{ url('/admin') }}">
+                    <img src="/img/ica_logo.png" style="height: 30px; width: auto;"> ICA EMS
                 </a>
                 <div class="d-flex inline text-light">
                         <ul class="nav">
