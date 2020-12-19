@@ -13,11 +13,14 @@ class CreateEquipmentsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('equipments', function (Blueprint $table) {
-            $table->unsignedBigInteger('equipment_id')->unique();
+            $table->bigIncrements('equipment_id');
             $table->string('equipment_name');
             $table->date('date_added');
         });
+
+        DB::statement(' ALTER TABLE equipments AUTO_INCREMENT = 1000');
     }
 
     /**
@@ -30,3 +33,4 @@ class CreateEquipmentsTable extends Migration
         Schema::dropIfExists('equipments');
     }
 }
+
