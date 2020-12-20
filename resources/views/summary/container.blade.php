@@ -14,7 +14,7 @@
                     <div class="ml-5 d-flex inline">
                         <div class="row">
                             <div class="col-md-5">
-                                <select name="pickMonth" id="month" class="browser-default custom-select mr-2">
+                                <select name="pickMonth" id="month" class="browser-default custom-select mr-2" required>
                                         <option value="">Select Month..........</option>
                                         <option id="jan"value="Jan">January</option>
                                         <option value="Feb">Febuary</option>
@@ -31,7 +31,7 @@
                                 </select>
                             </div>
                             <div class="col-md-5">
-                                <select name="pickYear" id="month" class="browser-default custom-select mr-2">
+                                <select name="pickYear" id="month" class="browser-default custom-select mr-2" required>
                                         <option value="default">Select Year..........</option>
                                         <option value="2020">2020</option>
                                         <option value="2021">2021</option>
@@ -48,6 +48,13 @@
                     </div>
                 </div>
             </form> 
+            @if(Session('empty'))
+                <div class="alert alert-success alert-dismissible show mr-4 ml-4 mt-3  mb-0" role="alert" >
+                <strong class="">{{ session('empty') }}</strong>
+                <button type="button" data-dismiss="alert" class="close" >
+                <span aria-hidden="true">&times;</span></button>
+                </div>
+            @endif
             <div class="card-body">
                 @yield('container')
             </div>

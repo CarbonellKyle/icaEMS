@@ -163,7 +163,7 @@ class SummaryController extends Controller
     // ang e return ani kai ang mga details sa kana nga particular id ex. if mo e click nimo ang 
     // details button sa summary mao ni iyahang method
     // mao ni iyahang process Friends... 
-    public function getDetails($id)
+    public function getDetails($id, $itemName)
     {
 
         $data = DB::table('equipments as e')
@@ -171,7 +171,13 @@ class SummaryController extends Controller
         ->join('logs as l','e.equipment_id','=','l.equipment_id')
         ->where('l.equipment_id',$id)
         ->get();
-        return view('summary.record-details',['items'=>$data]);
+
+        //$itemName = $data[0]->equipment_name;
+        if(count($data) == 0)
+        {
+           return redirect()->back()->with("empty","Sorry! There's no borrowed records for ".$itemName. " equipment");
+        }
+       return view('summary.record-details',['items'=>$data]);
     }
 
     // method ni para sa pag kuha nimo sa details after nimo na search ang month ug ang year

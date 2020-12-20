@@ -35,7 +35,7 @@ class SystemUserController extends Controller
     public function getSystemUser()
     {
         
-         $users = DB::table('role_user as r')
+        $users = DB::table('role_user as r')
         ->select(['u.id','u.name','u.email','r.user_type'])
         ->join('users as u','u.id','=','r.user_id')
         ->where('r.role_id',3)
@@ -96,5 +96,13 @@ class SystemUserController extends Controller
             ->where('l.borrower_name',$name)
             ->get();
             return view('admin.user.systemUserDetailsReport',['items'=>$userBorrwedReport,'name'=>$name]);
+    }
+
+    public function removeSystemUser($id, $name)
+    {
+        DB::table('users')
+        ->where('id',$id)->delete();
+
+        return redirect()->back()->with('success','Removing complete!.  '.$name.' has been successfully deleted!');
     }
 }

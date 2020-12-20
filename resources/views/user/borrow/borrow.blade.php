@@ -21,7 +21,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label class="text-center"><strong>Selct equipments</strong></label>
-                                    <select name="borrowed_item" id="month" class="browser-default custom-select mr-2">
+                                    <select name="borrowed_item" id="month" class="browser-default custom-select mr-2"required>
                                             <option value="">Select Equipments..........</option>
                                             @foreach($items as $item)
                                             <option value="{{ $item->equipment_id }}">{{ $item->equipment_name }}</option>
@@ -34,7 +34,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <label><strong>Select date to return</strong></label>
-                                    <input type="date" name="date_returned" class="form-control ">
+                                    <input type="date" name="date_returned" class="form-control " required>
                                 </div>
                             </div>
                         </div>

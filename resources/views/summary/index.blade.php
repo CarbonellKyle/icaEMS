@@ -25,7 +25,7 @@ All Equipments
                                         <td>{{ $equipments[$i][1] }}</td>
                                         <td>{{ $equipments[$i][2] }}</td>
                                         <td>
-                                            <a href="{{ url('/summary/index/details/'.$equipments[$i][0]) }}" class="btn btn-sm btn-success ">Details</a>
+                                            <a href="{{ url('/summary/index/details/'.$equipments[$i][0]).'/'.$equipments[$i][1] }}" class="btn btn-sm btn-success ">Details</a>
                                         </td>
                                     </tr>
                             @endfor

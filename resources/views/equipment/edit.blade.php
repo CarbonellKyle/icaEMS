@@ -1,50 +1,54 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row">
-	<div class="col-lg-12 margin-tb">
-		<div class="pull-right">
-			<a class="btn btn-primary" href="{{ route('equipment.index')}}">Back</a>
-		</div>
-	</div>
-</div>
-
-@if ($errors->any())
-	<div class="alert alert-danger">
-		<strong>Whooops!</strong> There were some problems with your input.<br><br>
-
-		<ul>
-			@foreach ($errors->all() as $error)
-				<li>{{$error}}</li>
-			@endforeach
-		</ul>
-	</div>
-	@endif
-
-	<form action="{{route('equipment.update',$equipment->equipment_id)}}" method="POST">
-		@csrf
-
-		@method('PUT')
-
-		<div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="form-group">
-					<strong>Equipment Name:</strong>
-					<input type="text" name="equipment_name" class="form-control" placeholder="Equipment Name">
+	<div class="d-flex justify-content-center">
+        <div class="card w-25">
+            <div class="row mt-3 ml-2">
+                <div class="col-md-9">
+					<p class="card-title"><strong>/ Update Equipments </strong></p>
 				</div>
-			</div>
-
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="form-group">
-					<strong>Date Added:</strong>
-					<input type="date" name="date_added" class="form-control">
+				<div class="col-md-3">
+					<a class="text-dark	" href="{{ route('equipment.index')}}">&#171;&#171; Back</a>
 				</div>
-			</div>
-
-
-			<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-				<button type="submit" class="btn btn-primary">Update</button>
-			</div>
-		</div>
-	</form>
+            </div>
+            @if(Session('success'))
+            	<div class="alert alert-warning alert-dismissible show mr-2 ml-2" role="alert" >
+				<strong class="">{{ session('success') }}</strong>
+            	<button type="button" data-dismiss="alert" class="close" >
+				<span aria-hidden="true">&times;</span></button>
+            	</div>
+            @endif
+            <form action="{{ url('/update/equipment/submit/'.$items[0]->equipment_id) }}" method="POST">
+                @csrf
+                <div class="container pl-5 ml-5 mt-3 pb-5">
+                    <div class=" d-block ">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+								@if(session()->has('success'))
+								<label class="text-center"><strong>Choose another one...</strong></label>
+								<input type="text" name="equipment" value="" class="form-control" placeholder="Amazing! Try Again!...." disabled>
+								@else
+								<label class="text-center"><strong>Equipment Name</strong></label>
+								<input type="text" name="equipment" value="{{ $items[0]->equipment_name }}" class="form-control" placeholder="Enter Equipment's name" required>
+								@endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                            <div class="form-group">
+                                    <label></label>
+									@if(session()->has('success'))
+									@else
+                                    <button type="submit" id="btnresult"  class="btn btn-success btn-block">submit</button>
+									@endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form> 
+        </div>
+    </div>
 	@endsection

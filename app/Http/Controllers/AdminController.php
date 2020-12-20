@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Log;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -14,9 +15,19 @@ class AdminController extends Controller
 
     public function index()
     {
-        $admin = Log::all();
-        return view('admin.index',compact('admin'))
-            ->with('i',(request()->input('page',1)-1)*5);
+        // $admin = Log::all();
+        // return view('admin.index',compact('admin'))
+        //     ->with('i',(request()->input('page',1)-1)*5);
+
+         $logsData = DB::table('logs as l')
+        ->select(['l.Id','l.borrower_name','e.equipment_name','l.datetime_borrowed','l.datetime_returned'])
+        ->join('equipments as e','e.equipment_id','=','l.equipment_id')
+        ->orderby('l.Id','asc')
+        ->get();
+
+        return view('admin.index',['items'=>$logsData]);
+        // return $logsData[1]->Id;
+
     }
 
     public function create()
@@ -66,6 +77,6 @@ class AdminController extends Controller
         $admin->delete();
 
         return redirect()->route('admin.index')
-            ->with('success','Deleted successfully.');
+            ->with('success','User record has been successfully deleted!.');
     }
 }
