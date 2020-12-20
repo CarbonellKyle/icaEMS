@@ -79,4 +79,9 @@ class AdminController extends Controller
         return redirect()->route('admin.index')
             ->with('success','User record has been successfully deleted!.');
     }
+
+    public function profile()
+    {
+        return view('admin.profile');
+    }
 }

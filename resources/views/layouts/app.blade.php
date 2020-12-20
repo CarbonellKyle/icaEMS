@@ -35,11 +35,10 @@
                 <div class="d-flex inline text-light">
                         <ul class="nav">
                             <li class="nav-item"><a href="{{ url('/admin') }}" class="nav-link">Home</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+                            <li class="nav-item"><a href="{{ url('/admin-profile') }}" class="nav-link">Profile</a></li>
                             <li class="nav-item"><a href="{{ route('system.user') }}" class="nav-link">User</a></li>
                             <li class="nav-item"><a href="{{ url('/equipment') }}" class="nav-link">Equipment</a></li>
                             <li class="nav-item"><a href="{{ route('summary.index') }}" class="nav-link">Summary</a></li>
-                            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                         </ul>
                     </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

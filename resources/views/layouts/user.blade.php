@@ -36,10 +36,9 @@
                 <div class="d-flex inline text-light">
                         <ul class="nav">
                             <li class="nav-item"><a href="{{ route('user') }}" class="nav-link"><strong>Home</strong></a></li>
-                            <li class="nav-item"><a href="#" class="nav-link"><strong>Profile</strong></a></li>
+                            <li class="nav-item"><a href="{{ route('user-profile') }}" class="nav-link"><strong>Profile</strong></a></li>
                             <li class="nav-item"><a href="{{ route('borrow') }}" class="nav-link"><strong>Borrow</strong></a></li>
                             <li class="nav-item"><a href="{{ route('borrow.history') }}" class="nav-link"><strong>Borrow History</strong></a></li>
-                            <li class="nav-item"><a href="#" class="nav-link"><strong>About</strong></a></li>
                         </ul>
                     </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

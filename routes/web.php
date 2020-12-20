@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/user', 'UserController@index')->name('user');
+Route::get('/user-profile', 'UserController@profile')->name('user-profile');
 Route::resource('admin', 'AdminController');
 
 
@@ -30,6 +31,7 @@ Route::resource('equipment', 'EquipmentController');
 
 
 Route::group(['middleware'=>['role:superadministrator']], function(){
+    Route::get('/admin-profile', 'AdminController@profile')->name('admin-profile');
     Route::get('/Home', 'SummaryController@container')->name('summary.container');
     Route::get('/summary', 'SummaryController@index')->name('summary.index');
     Route::get('/Error', 'SummaryController@getError')->name('summary.errors');
