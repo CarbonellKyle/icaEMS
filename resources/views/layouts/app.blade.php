@@ -36,8 +36,13 @@
                         <ul class="nav">
                             <li class="nav-item"><a href="{{ url('/admin') }}" class="nav-link">Home</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+<<<<<<< HEAD
                             <li class="nav-item"><a href="{{ route('system.user') }}" class="nav-link">User</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Equipment</a></li>
+=======
+                            <li class="nav-item"><a href="#" class="nav-link">User</a></li>
+                            <li class="nav-item"><a href="{{ url('/equipment') }}" class="nav-link">Equipment</a></li>
+>>>>>>> 703ed38d6c76f040208e8d54c2b137534c52f8a4
                             <li class="nav-item"><a href="{{ route('summary.index') }}" class="nav-link">Summary</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                         </ul>
