@@ -4,12 +4,12 @@
 @section('content')
 
     <div class="d-flex justify-content-center">
-        <div class="card w-50">
+        <div class="card pl-2 pr-2 pb-4 w-50">
             <div class="container mt-3 ml-2">
                 <p class="card-title"><strong>/ Borrow / History/ Details</strong></p>
             </div>
             <div class="mt-3">
-                <div class="container text-center">
+                <div class="table-overflow container text-center">
                     <table class="table">
                         <thead>
                         <tr>

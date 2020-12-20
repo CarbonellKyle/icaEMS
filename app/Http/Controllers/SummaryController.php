@@ -88,7 +88,7 @@ class SummaryController extends Controller
         }        
         if($data->isEmpty())
         {
-            return redirect()->route('summary.error');
+            return view('summary.errorHandler');
             //return redirect()->back()->with('alert',"Sorry! no records found");
         }
        
